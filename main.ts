@@ -96,7 +96,8 @@ f f f 4 4 c b c b 5 5 5 b f
 `, SpriteKind.Player)
     controller.moveSprite(TombRaider)
     TombRaider.setPosition(10, 10)
-    Baddie = sprites.create(img`
+    for (let index = 0; index < 4; index++) {
+        Baddie = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -122,7 +123,8 @@ f f f 4 4 c b c b 5 5 5 b f
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-    Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
+        Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
+    }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     TombRaider.setPosition(10, 10)
