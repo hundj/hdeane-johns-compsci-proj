@@ -62,6 +62,8 @@ scene.onHitWall(SpriteKind.Player, function (sprite) {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    TombRaider.setPosition(10, 10)
+    info.startCountdown(20)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.setScore(0)
