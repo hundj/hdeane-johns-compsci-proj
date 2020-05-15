@@ -65,7 +65,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     TombRaider.setPosition(10, 10)
     info.startCountdown(20)
     for (let index = 0; index < 2; index++) {
-        Baddie.setPosition(Math.randomRange(20, 140), Math.randomRange(10, 110))
+        Baddie.setPosition(Math.randomRange(30, 140), Math.randomRange(10, 110))
     }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -106,7 +106,7 @@ f f f 4 4 c b c b 5 5 5 b f
 `, SpriteKind.Player)
     controller.moveSprite(TombRaider)
     TombRaider.setPosition(10, 10)
-    for (let index = 0; index < 4; index++) {
+    for (let index = 0; index < 5; index++) {
         Baddie = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -133,7 +133,7 @@ f f f 4 4 c b c b 5 5 5 b f
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-        Baddie.setPosition(Math.randomRange(20, 140), Math.randomRange(10, 110))
+        Baddie.setPosition(Math.randomRange(30, 140), Math.randomRange(10, 110))
     }
     Chest = sprites.create(img`
 . . b b b b b b b b b b b b . . 
