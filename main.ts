@@ -19,11 +19,13 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
+let TombRaider: Sprite = null
+let Baddie: Sprite = null
 scene.onHitWall(SpriteKind.Player, function (sprite) {
     TombRaider.setPosition(10, 10)
 })
-let TombRaider: Sprite = null
-tiles.setTilemap(tiles.createTilemap(
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    tiles.setTilemap(tiles.createTilemap(
             hex`0a000800010808080808080808080a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b`,
             img`
 . . . . . . . . . . 
@@ -38,7 +40,7 @@ tiles.setTilemap(tiles.createTilemap(
             [myTiles.tile0,sprites.castle.tilePath1,sprites.dungeon.collectibleRedCrystal,sprites.dungeon.chestClosed,sprites.castle.tilePath9,sprites.castle.tilePath8,sprites.castle.tilePath7,sprites.castle.tilePath3,sprites.castle.tilePath2,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath5],
             TileScale.Sixteen
         ))
-TombRaider = sprites.create(img`
+    TombRaider = sprites.create(img`
 . . . f f f c c c . . . . . 
 . f f 5 5 5 5 5 5 f f . . . 
 . f 5 5 5 5 5 5 5 5 5 f . . 
@@ -56,9 +58,9 @@ f f f 4 4 c b c b 5 5 5 b f
 . f f 3 b 3 b 3 b f f . . . 
 . . . f f b b f f . . . . . 
 `, SpriteKind.Player)
-controller.moveSprite(TombRaider)
-TombRaider.setPosition(10, 10)
-let Baddie = sprites.create(img`
+    controller.moveSprite(TombRaider)
+    TombRaider.setPosition(10, 10)
+    Baddie = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
@@ -84,4 +86,5 @@ let Baddie = sprites.create(img`
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
+    Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
+})
