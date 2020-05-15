@@ -64,7 +64,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeScoreBy(1)
     TombRaider.setPosition(10, 10)
     info.startCountdown(20)
-    for (let index = 0; index < 2; index++) {
+    for (let index = 0; index < 4; index++) {
         Baddie.setPosition(Math.randomRange(30, 140), Math.randomRange(10, 110))
     }
 })
