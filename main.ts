@@ -60,7 +60,11 @@ namespace myTiles {
 scene.onHitWall(SpriteKind.Player, function (sprite) {
     TombRaider.setPosition(10, 10)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    info.startCountdown(10)
     tiles.setTilemap(tiles.createTilemap(
             hex`0a000800010808080808080808080a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b`,
             img`
@@ -123,7 +127,7 @@ f f f 4 4 c b c b 5 5 5 b f
 . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 
 `, SpriteKind.Enemy)
-        Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
+        Baddie.setPosition(Math.randomRange(20, 140), Math.randomRange(10, 110))
     }
     Chest = sprites.create(img`
 . . b b b b b b b b b b b b . . 
@@ -143,7 +147,7 @@ b c e e e e e e e e e e e e c b
 b b b b b b b b b b b b b b b b 
 . b b . . . . . . . . . . b b . 
 `, SpriteKind.Food)
-    Chest.setPosition(Math.randomRange(131, 160), Math.randomRange(91, 120))
+    Chest.setPosition(Math.randomRange(141, 160), Math.randomRange(101, 120))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     TombRaider.setPosition(10, 10)
