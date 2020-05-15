@@ -124,6 +124,9 @@ f f f 4 4 c b c b 5 5 5 b f
 `, SpriteKind.Enemy)
     Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    TombRaider.setPosition(10, 10)
+})
 let Baddie: Sprite = null
 let TombRaider: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
