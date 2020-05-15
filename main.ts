@@ -60,9 +60,6 @@ namespace myTiles {
 scene.onHitWall(SpriteKind.Player, function (sprite) {
     TombRaider.setPosition(10, 10)
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
-    info.changeScoreBy(1)
-})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.startCountdown(10)
     tiles.setTilemap(tiles.createTilemap(
