@@ -153,7 +153,7 @@ b c e e e e e e e e e e e e c b
 b b b b b b b b b b b b b b b b 
 . b b . . . . . . . . . . b b . 
 `, SpriteKind.Food)
-    Chest.setPosition(Math.randomRange(141, 160), Math.randomRange(101, 120))
+    Chest.setPosition(Math.randomRange(145, 160), Math.randomRange(101, 120))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     TombRaider.setPosition(10, 10)
