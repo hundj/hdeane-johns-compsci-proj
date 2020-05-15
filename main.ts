@@ -18,9 +18,45 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `
+    //% blockIdentity=images._tile
+    export const tile1 = img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 2 2 2 . . . . . . . 
+. . . . . 2 2 . 2 2 . . . . . . 
+. . . . . 2 . . . 2 . . . . . . 
+. . . . . 2 . . . 2 . . . . . . 
+. . . . . 2 . 2 2 2 . . . . . . 
+. . . . . 2 2 2 . . . . . . . . 
+. . . . . 2 . . . . . . . . . . 
+. . . . . 2 . . . . . . . . . . 
+. . . . . 2 . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`
+    //% blockIdentity=images._tile
+    export const tile2 = img`
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+`
 }
-let TombRaider: Sprite = null
-let Baddie: Sprite = null
 scene.onHitWall(SpriteKind.Player, function (sprite) {
     TombRaider.setPosition(10, 10)
 })
@@ -37,7 +73,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,sprites.castle.tilePath1,sprites.dungeon.collectibleRedCrystal,sprites.dungeon.chestClosed,sprites.castle.tilePath9,sprites.castle.tilePath8,sprites.castle.tilePath7,sprites.castle.tilePath3,sprites.castle.tilePath2,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath5],
+            [myTiles.tile0,sprites.castle.tilePath1,sprites.dungeon.collectibleRedCrystal,sprites.dungeon.chestClosed,sprites.castle.tilePath9,sprites.castle.tilePath8,sprites.castle.tilePath7,sprites.castle.tilePath3,sprites.castle.tilePath2,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath5,myTiles.tile1,myTiles.tile2],
             TileScale.Sixteen
         ))
     TombRaider = sprites.create(img`
@@ -88,3 +124,20 @@ f f f 4 4 c b c b 5 5 5 b f
 `, SpriteKind.Enemy)
     Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
 })
+let Baddie: Sprite = null
+let TombRaider: Sprite = null
+tiles.setTilemap(tiles.createTilemap(
+            hex`0a0008000000000000000000000000000000000000000000000000000303000000000000000300000300000000000003000003000000000000030303030000000000000300000300000000000000000000000000`,
+            img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`,
+            [myTiles.tile0,sprites.castle.tilePath5,myTiles.tile1,myTiles.tile2],
+            TileScale.Sixteen
+        ))

@@ -1,4 +1,18 @@
-<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="?8)oT~MWCDNaY5fv|YIK">Player</variable><variable type="KIND_SpriteKind" id="83+,mV@sSuY8KI;A+m~a">Projectile</variable><variable type="KIND_SpriteKind" id="r#-=Zs$MBoP,,T]_[[^j">Food</variable><variable type="KIND_SpriteKind" id="w~^J(R^br2~gC7)Fva{W">Enemy</variable><variable type="BLOCKLY_TILESET_TYPE" id="Rr;-aue5W2HoZG[**:[x">0;16;16;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</variable><variable id="P2/$mno]Sv#OO*rR6YaK">TombRaider</variable><variable id="}d{ET8|i[tO8^.l;*fz#">mySprite</variable><variable id="m*MkGf=juh`r[ni,KvX=">Baddie</variable></variables><block type="pxt-on-start" id="%*.iiq/i:i=,5{i7.?MD" x="50" y="0"/><block type="keyonevent" id="Sdv_;W{uTfEGbZ1LKotT" x="150" y="210"><field name="button">controller.A</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="tilemap_editor" id="v_K1kL+F7sxmkSOwo`H="><field name="tilemap">tiles.createTilemap(
+<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable type="KIND_SpriteKind" id="?8)oT~MWCDNaY5fv|YIK">Player</variable><variable type="KIND_SpriteKind" id="83+,mV@sSuY8KI;A+m~a">Projectile</variable><variable type="KIND_SpriteKind" id="r#-=Zs$MBoP,,T]_[[^j">Food</variable><variable type="KIND_SpriteKind" id="w~^J(R^br2~gC7)Fva{W">Enemy</variable><variable id="P2/$mno]Sv#OO*rR6YaK">TombRaider</variable><variable id="}d{ET8|i[tO8^.l;*fz#">mySprite</variable><variable id="m*MkGf=juh`r[ni,KvX=">Baddie</variable><variable type="BLOCKLY_TILESET_TYPE" id="8%bNFoLAFd,(E)ti4w+F">0;16;16;0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</variable><variable type="BLOCKLY_TILESET_TYPE" id="HjD+zO+h)amr@QFq!6e1">1;16;16;0000000000000000000000000000000000000022020000000000200222000000000020002000000000002000200000000000202022000000000020220000000000002000000000000000200000000000000020000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</variable><variable type="BLOCKLY_TILESET_TYPE" id="Wxt^e(3{d7}OM?uW#K}@">2;16;16;2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222</variable></variables><block type="pxt-on-start" id="%*.iiq/i:i=,5{i7.?MD" x="50" y="0"><statement name="HANDLER"><block type="tilemap_editor" id="z{f2n1HWz-_;a!qOcaA/"><field name="tilemap">tiles.createTilemap(
+            hex`0a0008000000000000000000000000000000000000000000000000000303000000000000000300000300000000000003000003000000000000030303030000000000000300000300000000000000000000000000`,
+            img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`,
+            [myTiles.tile0,sprites.castle.tilePath5,myTiles.tile1,myTiles.tile2],
+            TileScale.Sixteen
+        )</field></block></statement></block><block type="keyonevent" id="Sdv_;W{uTfEGbZ1LKotT" x="150" y="210"><field name="button">controller.A</field><field name="event">ControllerButtonEvent.Pressed</field><statement name="HANDLER"><block type="tilemap_editor" id="v_K1kL+F7sxmkSOwo`H="><field name="tilemap">tiles.createTilemap(
             hex`0a000800010808080808080808080a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b`,
             img`
 . . . . . . . . . . 
@@ -10,7 +24,7 @@
 . . . . . . . . . . 
 . . . . . . . . . . 
 `,
-            [myTiles.tile0,sprites.castle.tilePath1,sprites.dungeon.collectibleRedCrystal,sprites.dungeon.chestClosed,sprites.castle.tilePath9,sprites.castle.tilePath8,sprites.castle.tilePath7,sprites.castle.tilePath3,sprites.castle.tilePath2,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath5],
+            [myTiles.tile0,sprites.castle.tilePath1,sprites.dungeon.collectibleRedCrystal,sprites.dungeon.chestClosed,sprites.castle.tilePath9,sprites.castle.tilePath8,sprites.castle.tilePath7,sprites.castle.tilePath3,sprites.castle.tilePath2,sprites.castle.tilePath6,sprites.castle.tilePath4,sprites.castle.tilePath5,myTiles.tile1,myTiles.tile2],
             TileScale.Sixteen
         )</field><next><block type="variables_set" id="I=)w|Axn1UmQh+{_;,.b"><field name="VAR" id="P2/$mno]Sv#OO*rR6YaK">TombRaider</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id="/ymV$;+6p;X#ac^d9L6D"><value name="img"><shadow type="screen_image_picker" id="%IccyKw?(fenbbyL{@7+"><field name="img">img`
 . . . f f f c c c . . . . . 
