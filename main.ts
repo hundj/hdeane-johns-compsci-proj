@@ -60,8 +60,12 @@ namespace myTiles {
 scene.onHitWall(SpriteKind.Player, function (sprite) {
     TombRaider.setPosition(10, 10)
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
+    info.changeScoreBy(1)
+})
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    info.startCountdown(10)
+    info.setScore(0)
+    info.startCountdown(20)
     tiles.setTilemap(tiles.createTilemap(
             hex`0a000800010808080808080808080a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b0a0b0b0b0b0b0b0b0b0b`,
             img`
