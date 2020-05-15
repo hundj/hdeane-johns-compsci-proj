@@ -64,7 +64,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
     info.changeScoreBy(1)
     TombRaider.setPosition(10, 10)
     info.startCountdown(20)
-    Baddie.setPosition(Math.randomRange(20, 140), Math.randomRange(10, 110))
+    for (let index = 0; index < 2; index++) {
+        Baddie.setPosition(Math.randomRange(20, 140), Math.randomRange(10, 110))
+    }
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     info.setScore(0)
