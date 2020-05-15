@@ -125,10 +125,30 @@ f f f 4 4 c b c b 5 5 5 b f
 `, SpriteKind.Enemy)
         Baddie.setPosition(Math.randomRange(20, 160), Math.randomRange(20, 120))
     }
+    Chest = sprites.create(img`
+. . b b b b b b b b b b b b . . 
+. b e 4 4 4 4 4 4 4 4 4 4 e b . 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+b e e 4 4 4 4 4 4 4 4 4 4 e e b 
+b e e e e e e e e e e e e e e b 
+b e e e e e e e e e e e e e e b 
+b b b b b b b d d b b b b b b b 
+c b b b b b b c c b b b b b b c 
+c c c c c c b c c b c c c c c c 
+b e e e e e c b b c e e e e e b 
+b e e e e e e e e e e e e e e b 
+b c e e e e e e e e e e e e c b 
+b b b b b b b b b b b b b b b b 
+. b b . . . . . . . . . . b b . 
+`, SpriteKind.Food)
+    Chest.setPosition(Math.randomRange(131, 160), Math.randomRange(91, 120))
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     TombRaider.setPosition(10, 10)
 })
+let Chest: Sprite = null
 let Baddie: Sprite = null
 let TombRaider: Sprite = null
 tiles.setTilemap(tiles.createTilemap(
